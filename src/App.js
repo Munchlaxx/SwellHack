@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import SearchBox from './components/Searchbar';
 import SurfForecast from './components/SurfForecast';
-// import spotData from './data';
+import spotData from './data';
 
 class App extends Component {
   constructor(props){
@@ -18,6 +18,21 @@ class App extends Component {
 
   calculatetime (date){
     return new Date(date).toISOString()
+  }
+
+  findSpot = (name) => {
+    let index;
+    for (let i = 0; i < spotData.spots.length; i++){
+      if (spotData.spots[i].spot === name){
+        index = i;
+      }
+    }
+    
+    this.setState({
+      spotInfo : spotData.spots[index]
+    }, () => {
+      this.getSwellData()
+    })     
   }
 
   // componentDidMount () {
@@ -64,7 +79,6 @@ class App extends Component {
         findSpot ={this.findSpot} 
       />
       <SurfForecast 
-      findSpot = {this.findSpot}
       forecastData = {this.state.forecastData}
        />
       </div>
