@@ -16,6 +16,15 @@ const spotData = {
         weatherParams: "swellHeight,waveHeight,wavePeriod,windSpeed,windDirection,waterTemperature,airTemperature",
         time : new Date().getTime(),
     },
+    {
+        lat : 28.3678,
+        long : 80.6028,
+        spot : "Coco Beach Pier",
+        region : "Florida",
+        weatherParams: "swellHeight,waveHeight,wavePeriod,windSpeed,windDirection,waterTemperature,airTemperature",
+        time : new Date().getTime(),
+    },
+    
     ]
 }
 
