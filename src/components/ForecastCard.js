@@ -10,24 +10,23 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 600,
-  },
-  media: {
-    height: 300,
-  },
-});
+// const useStyles = makeStyles({
+//   card: {
+//     height: 400,
+//   },
+//   media: {
+//     height: 300,
+//   },
+// });
 
 const ForecastCard = () => {
-  const classes = useStyles();
-
   return (
-    <Grid className={classes.grid} > 
-    <Card className={classes.card}>
+    <Grid container  spacing={3} > 
+    <Grid item xs={12}>
+    <Card >
       <CardActionArea>
         <CardMedia
-          className={classes.media}
+          
           image="/static/images/cards/contemplative-reptile.jpg"
           title="Contemplative Reptile"
         />
@@ -50,6 +49,7 @@ const ForecastCard = () => {
         </Button>
       </CardActions>
     </Card>
+    </Grid>
     </Grid>
     
   );
