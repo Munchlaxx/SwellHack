@@ -17,15 +17,8 @@ function windSpeed (val) {
 const SurfForecast = (props) => {
   if (!props.forecastData.waveHeight){
     return (
-      <div> 
-      <button onClick={props.getSwellData}>Api</button>
-      <button onClick={props.findSpot} >Spot</button>
-      <p>Wave Height: </p>
-      <p>wavePeriod: </p>
-      <p>swellHeight: </p>
-      <p>windSpeed: </p>
-      <p>windDirection: </p>
-      <p>airTemperature: </p>
+      <div >
+      <h1>Enter data</h1>
     </div>
     )
   } else {

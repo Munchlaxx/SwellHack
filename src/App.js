@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import SearchBox from './components/Searchbar';
-import SurfForecast from './components/SurfForecast';
 import spotData from './data';
 
+// Components
+import NavBar from './components/NavBar';
+import SearchBox from './components/Searchbar';
+import SurfForecast from './components/SurfForecast';
+import ForecastCard from './components/ForecastCard';
 class App extends Component {
   constructor(props){
     super(props)
@@ -57,15 +60,16 @@ class App extends Component {
     });
     const data = await api_call.json();
     console.log(data);
+    const dataObject = data.hours[data.hours.length - 1]; 
     this.setState({
       forecastData : {
-      swellHeight : data.hours[data.hours.length - 1].swellHeight[1].value,
-      waveHeight : data.hours[data.hours.length - 1].waveHeight[1].value,
-      wavePeriod : data.hours[data.hours.length - 1].wavePeriod[1].value,
-      windSpeed : data.hours[data.hours.length - 1].windSpeed[1].value,
-      windDirection : data.hours[data.hours.length - 1].windDirection[1].value,
-      waterTemperature: data.hours[data.hours.length - 1].waterTemperature[1].value,
-      airTemperature : data.hours[data.hours.length - 1].airTemperature[1].value
+      swellHeight : dataObject.swellHeight[1].value,
+      waveHeight : dataObject.waveHeight[1].value,
+      wavePeriod : dataObject.wavePeriod[1].value,
+      windSpeed : dataObject.windSpeed[1].value,
+      windDirection : dataObject.windDirection[1].value,
+      waterTemperature: dataObject.waterTemperature[1].value,
+      airTemperature : dataObject.airTemperature[1].value
       }
     });
   }
@@ -73,14 +77,17 @@ class App extends Component {
 
   render(){
     return (
-      <div >
-      <p>Hello</p>
-      <SearchBox 
-        findSpot ={this.findSpot} 
-      />
-      <SurfForecast 
-      forecastData = {this.state.forecastData}
-       />
+      <div>
+        <NavBar/>
+        <div className='container'>
+        <SearchBox 
+          findSpot ={this.findSpot} 
+        />
+        <SurfForecast 
+        forecastData = {this.state.forecastData}
+        />
+        <ForecastCard/>
+        </div>
       </div>
     );
   }

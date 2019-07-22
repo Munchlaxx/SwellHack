@@ -10,7 +10,7 @@ const spotData = {
     },
     {
         lat : 33.3853,
-        long : 117.5939,
+        long : -117.5939,
         spot : "Lower Trestles",
         region : "California",
         weatherParams: "swellHeight,waveHeight,wavePeriod,windSpeed,windDirection,waterTemperature,airTemperature",
@@ -18,7 +18,7 @@ const spotData = {
     },
     {
         lat : 28.3678,
-        long : 80.6028,
+        long : -80.6028,
         spot : "Coco Beach Pier",
         region : "Florida",
         weatherParams: "swellHeight,waveHeight,wavePeriod,windSpeed,windDirection,waterTemperature,airTemperature",
